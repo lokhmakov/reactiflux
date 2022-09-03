@@ -1,5 +1,4 @@
-import * as A from './main/three/01';
-import './main/promise/limit';
+import * as A from './2022-09-03/02';
 
 function App() {
   return <A.Screen />;
