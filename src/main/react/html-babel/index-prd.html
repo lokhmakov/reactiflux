@@ -1,0 +1,25 @@
+<!DOCTYPE >
+<html>
+  <head>
+    <script src="https://unpkg.com/react/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const Component = (props) => {
+        return <div>My component!</div>;
+      };
+
+      const App = () => (
+        <div>
+          <Component />
+        </div>
+      );
+
+      const root = document.querySelector('#root');
+      ReactDOM.render(<App />, root);
+    </script>
+  </body>
+</html>
