@@ -19,7 +19,7 @@ type Module = {
 const PRESERVED = import.meta.glob<Module>('/src/pages/(_app|404).tsx', {
   eager: true,
 });
-const ROUTES = import.meta.glob<Module>('/src/pages/**/[a-z0-9[]*.tsx');
+const ROUTES = import.meta.glob<Module>('/src/pages/**/[a-z0-9[]*.{jsx,tsx}');
 
 const preservedRoutes: Partial<Record<string, () => JSX.Element>> = Object.keys(
   PRESERVED
