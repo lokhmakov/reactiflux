@@ -41,7 +41,7 @@ const regularRoutes = Object.keys(ROUTES).reduce<Route[]>((routes, key) => {
   };
 
   const segments = key
-    .replace(/\/src\/pages|\.tsx$/g, '')
+    .replace(/\/src\/pages|\.[jt]sx$/g, '')
     .replace(/\[\.{3}.+\]/, '*')
     .replace(/\[([^\]]+)\]/g, ':$1')
     .split('/')
