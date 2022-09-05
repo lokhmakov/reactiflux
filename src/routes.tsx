@@ -95,8 +95,6 @@ const routes = [...regularRoutes, { path: '*', element: <NotFound /> }];
 export const Routes = (
   props: Omit<RouterProps, 'children' | 'location' | 'routes'> = {}
 ) => {
-  console.log(ROUTES);
-
   return (
     <Router {...props} location={location} routes={routes}>
       <App>
