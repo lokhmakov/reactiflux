@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import { OrbitControls, TorusKnot } from '@react-three/drei';
 import { Canvas, useFrame } from '@react-three/fiber';
 
-export function Screen() {
+export default function Page() {
   return (
     <Canvas>
       <color attach="background" args={['black']} />
