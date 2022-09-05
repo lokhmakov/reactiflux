@@ -5,10 +5,7 @@ const options = {
   method: 'GET',
   url: 'https://weatherapi-com.p.rapidapi.com/forecast.json',
   params: { q: 'London', days: '3' },
-  headers: {
-    'X-RapidAPI-Key': '8cb683f5d8mshca3a682bccc706bp1040d8jsn03538f68c68c',
-    'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
-  },
+  headers: {},
 };
 
 export default function App() {
