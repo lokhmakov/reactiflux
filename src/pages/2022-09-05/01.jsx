@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
-const axios = require('axios');
+import axios from 'axios';
 
 const options = {
   method: 'GET',
@@ -17,7 +16,7 @@ export default function App() {
   useEffect(() => {
     async function getData() {
       try {
-        const response = await axios.get(options.url);
+        const response = await axios(options);
         setWeatherInfo(response.data);
       } catch (err) {
         console.log(err);
@@ -29,8 +28,7 @@ export default function App() {
   return (
     <div className="App">
       <h1>Our Weather App</h1>
-      {weatherInfo}
-      <p>{weatherInfo.location.name}</p>
+      <p>{weatherInfo?.location?.name}</p>
     </div>
   );
 }
