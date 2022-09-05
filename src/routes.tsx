@@ -19,9 +19,7 @@ type Module = {
 const PRESERVED = import.meta.glob<Module>('/src/pages/(_app|404).tsx', {
   eager: true,
 });
-const ROUTES = import.meta.glob<Module>('/src/pages/**/[a-z[]*.tsx');
-
-console.log(ROUTES);
+const ROUTES = import.meta.glob<Module>('/src/pages/**/[a-z0-9[]*.tsx');
 
 const preservedRoutes: Partial<Record<string, () => JSX.Element>> = Object.keys(
   PRESERVED
@@ -97,6 +95,8 @@ const routes = [...regularRoutes, { path: '*', element: <NotFound /> }];
 export const Routes = (
   props: Omit<RouterProps, 'children' | 'location' | 'routes'> = {}
 ) => {
+  console.log(ROUTES);
+
   return (
     <Router {...props} location={location} routes={routes}>
       <App>
