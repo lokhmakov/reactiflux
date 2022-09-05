@@ -1,4 +1,4 @@
-import { Routes } from 'generouted';
+import { Routes } from './routes';
 import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
