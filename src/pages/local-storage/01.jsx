@@ -17,6 +17,8 @@ Object.defineProperty(window, 'localStorage', {
   }),
 });
 
+console.log(localStorage.getItem(`key`));
+
 export default function Page() {
   return (
     <div className="grid gap-2">
