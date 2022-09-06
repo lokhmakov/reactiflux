@@ -25,7 +25,7 @@ function Client({ id }) {
         className="p-1 bg-green-400 rounded-lg"
         onClick={() => localStorage.setItem(`key`, new Date().toISOString())}
       >
-        Change Me
+        Change Me ({id})
       </button>
     </div>
   );
