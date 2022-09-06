@@ -17,14 +17,12 @@ Object.defineProperty(window, 'localStorage', {
   }),
 });
 
-localStorage.setItem('foo', 'bar');
-
 export default function Page() {
   return (
     <div className="grid gap-2">
       <button
         className="p-1 bg-green-400 rounded-lg"
-        onClick={() => localStorage.setItem(`key`, `value`)}
+        onClick={() => localStorage.setItem(`key`, new Date().toISOString())}
       >
         Change Me
       </button>
