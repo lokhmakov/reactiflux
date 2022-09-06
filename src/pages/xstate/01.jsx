@@ -1,8 +1,57 @@
 import { assign, createMachine, interpret } from 'xstate';
-import { useMachine } from '@xstate/react';
+import { useMachine, useSelector } from '@xstate/react';
 
 export default function Page() {
-  return <div>xstate (01)</div>;
+  return (
+    <div className="p-2 grid gap-2">
+      <ClientMachine />
+      <ClientMachine />
+      <ClientService />
+      <ClientService />
+      <ClientService />
+    </div>
+  );
+}
+
+function ClientMachine() {
+  const [state, send] = useService({ machine: promiseMachine });
+
+  return <Client state={state} send={send} />;
+}
+
+function ClientService() {
+  const [state, send] = useService({ service: promiseService });
+
+  return <Client state={state} send={send} />;
+}
+
+function Client({ state, send }) {
+  // const [state, send] = useService({ machine: promiseMachine });
+  // const [state, send] = useService({ service: promiseService });
+
+  return (
+    <div className="p-2 bg-gray-200">
+      {state.matches('pending') && <p>Loading...</p>}
+      {state.matches('rejected') && <p>Promise Rejected</p>}
+      {state.matches('resolved') && <p>Promise Resolved</p>}
+      <div>
+        <button onClick={() => send('RESOLVE')}>Resolve</button>
+        <button onClick={() => send('REJECT')}>Reject</button>
+      </div>
+    </div>
+  );
+}
+
+function useService({ service, machine }) {
+  if (service) {
+    const state = useSelector(service, (v) => v);
+
+    return [state, service.send];
+  } else {
+    const [state, send] = useMachine(machine);
+
+    return [state, send];
+  }
 }
 
 const promiseMachine = createMachine({
@@ -29,45 +78,3 @@ const promiseService = interpret(promiseMachine).onTransition((state) =>
 );
 
 promiseService.start();
-promiseService.send({ type: 'RESOLVE' });
-
-// async function fetchUser(userId) {
-//   return { userId };
-// }
-
-// const userMachine = createMachine({
-//   id: 'user',
-//   initial: 'idle',
-//   context: {
-//     userId: 42,
-//     user: undefined,
-//     error: undefined,
-//   },
-//   states: {
-//     idle: {
-//       on: {
-//         FETCH: { target: 'loading' },
-//       },
-//     },
-//     loading: {
-//       invoke: {
-//         id: 'getUser',
-//         src: (context, event) => fetchUser(context.userId),
-//         onDone: {
-//           target: 'success',
-//           actions: assign({ user: (context, event) => event.data }),
-//         },
-//         onError: {
-//           target: 'failure',
-//           actions: assign({ error: (context, event) => event.data }),
-//         },
-//       },
-//     },
-//     success: {},
-//     failure: {
-//       on: {
-//         RETRY: { target: 'loading' },
-//       },
-//     },
-//   },
-// });
