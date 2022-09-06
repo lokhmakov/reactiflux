@@ -26,9 +26,6 @@ function ClientService() {
 }
 
 function Client({ state, send }) {
-  // const [state, send] = useService({ machine: promiseMachine });
-  // const [state, send] = useService({ service: promiseService });
-
   return (
     <div className="p-2 bg-gray-200">
       {state.matches('pending') && <p>Loading...</p>}
