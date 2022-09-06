@@ -31,9 +31,19 @@ function Client({ state, send }) {
       {state.matches('pending') && <p>Loading...</p>}
       {state.matches('rejected') && <p>Promise Rejected</p>}
       {state.matches('resolved') && <p>Promise Resolved</p>}
-      <div>
-        <button onClick={() => send('RESOLVE')}>Resolve</button>
-        <button onClick={() => send('REJECT')}>Reject</button>
+      <div className="grid grid-flow-col gap-2">
+        <button
+          className="p-1 bg-green-400 rounded-lg"
+          onClick={() => send('RESOLVE')}
+        >
+          Resolve
+        </button>
+        <button
+          className="p-1 bg-red-400 rounded-lg"
+          onClick={() => send('REJECT')}
+        >
+          Reject
+        </button>
       </div>
     </div>
   );
