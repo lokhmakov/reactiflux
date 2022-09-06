@@ -5,11 +5,11 @@ export default function App() {
 
   console.log(`search`, search);
 
-  const _onChange = (value) => {
+  const _onChangeValue = (value) => {
     setSearch(value);
   };
 
-  return <Child onChangeValue={_onChange} />;
+  return <Child onChangeValue={_onChangeValue} />;
 }
 
 function Child({ onChangeValue }) {
