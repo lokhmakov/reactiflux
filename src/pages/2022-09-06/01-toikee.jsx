@@ -13,5 +13,10 @@ export default function App() {
 }
 
 function Child({ onChangeValue }) {
-  return <input onChange={(e) => onChangeValue(e.target.value)} />;
+  return (
+    <input
+      className="bg-gray-200 m-2"
+      onChange={(e) => onChangeValue(e.target.value)}
+    />
+  );
 }
