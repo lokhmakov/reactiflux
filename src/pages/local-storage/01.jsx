@@ -1,9 +1,21 @@
 import * as React from 'react';
 
 export default function Page() {
+  return (
+    <>
+      <Client id={1} />
+      <Client id={2} />
+      <Client id={3} />
+      <Client id={4} />
+      <Client id={5} />
+    </>
+  );
+}
+
+function Client({ id }) {
   useLocalStorage({
     onSetItem(key, value) {
-      console.log(`setItem`, key, value);
+      console.log(`setItem`, id, key, value);
     },
   });
 
