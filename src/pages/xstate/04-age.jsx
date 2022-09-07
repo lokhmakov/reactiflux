@@ -66,5 +66,4 @@ const countService = interpret(countMachine).onTransition((state) =>
   console.log(state.value)
 );
 
-countService.start()
-countService.
+countService.start();
