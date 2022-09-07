@@ -22,8 +22,8 @@ const sizes = {
 }
 
 export default function Page() {
-  return Object.keys(types).flatMap((type) =>
-    Object.keys(sizes).map((size) => (
+  return Object.values(types).flatMap((type) =>
+    Object.values(sizes).map((size) => (
       <div>
         <Text key={`${type}_${size}`} type={type} size={size}>
           {`${type.toUpperCase()} (${size})`}
