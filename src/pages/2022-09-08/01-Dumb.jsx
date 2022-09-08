@@ -3,7 +3,7 @@ import * as React from 'react'
 export default function Page() {
   const [list, setList] = React.useState(() => data)
 
-  function _onClick(id) {
+  function _onRemove({id}) {
     setList((prevList) => prevList.filter((v) => v.id !== id))
   }
 
@@ -11,12 +11,20 @@ export default function Page() {
 
   return (
     <>
-      {list.map(({id, name}) => (
-        <Item key={id} name={name} onClick={() => _onClick(id)} />
-      ))}
-      <button onClick={clearAll}>Clear</button>
+      <SectionList list={list} onRemove={_onRemove} />
+      <SectionClear onClear={clearAll} />
     </>
   )
+}
+
+function SectionList({list, onRemove}) {
+  return list.map(({id, name}) => (
+    <Item key={id} name={name} onClick={() => onRemove({id})} />
+  ))
+}
+
+function SectionClear({onClear}) {
+  return <button onClick={onClear}>Clear</button>
 }
 
 const Item = ({name, onClick}) => <div onClick={onClick}>{name}</div>
