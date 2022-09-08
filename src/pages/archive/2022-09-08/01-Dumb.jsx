@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+const o: React.FC
+
 export default function Page() {
   const [list, setList] = React.useState(() => data)
 
