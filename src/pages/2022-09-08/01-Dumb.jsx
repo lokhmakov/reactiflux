@@ -7,9 +7,16 @@ export default function Page() {
     setList((prevList) => prevList.filter((v) => v.id !== id))
   }
 
-  return list.map(({id, name}) => (
-    <Item key={id} name={name} onClick={() => _onClick(id)} />
-  ))
+  const clearAll = () => setList([])
+
+  return (
+    <>
+      {list.map(({id, name}) => (
+        <Item key={id} name={name} onClick={() => _onClick(id)} />
+      ))}
+      <button onClick={clearAll}>Clear</button>
+    </>
+  )
 }
 
 const Item = ({name, onClick}) => <div onClick={onClick}>{name}</div>
