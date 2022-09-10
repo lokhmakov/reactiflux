@@ -39,7 +39,7 @@ function useProducts() {
 
     setProducts({
       data: indexed,
-      order: Object.keys(indexed),
+      order,
       orderPrice,
     })
   }, [])
