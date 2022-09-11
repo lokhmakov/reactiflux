@@ -15,7 +15,19 @@ const inputs = [
     type: 'text',
     placeholder: 'Enter the Article',
   },
+  {
+    id: 3,
+    name: `price`,
+    label: 'Price',
+    type: 'number',
+    placeholder: 'Enter the Price',
+  },
 ]
+
+const mapEventHandler = {
+  text: (e) => e.target.value,
+  number: (e) => e.target.valueAsNumber,
+}
 
 export default function Page() {
   const [data, setData] = React.useState({
@@ -25,8 +37,8 @@ export default function Page() {
 
   console.log(`Page`, data)
 
-  const makeOnChange = (name) => (e) => {
-    setData((prev) => ({...prev, [name]: e.target.value}))
+  const makeOnChange = (name, type) => (e) => {
+    setData((prev) => ({...prev, [name]: mapEventHandler[type](e)}))
   }
 
   return inputs.map((input) => (
@@ -35,10 +47,10 @@ export default function Page() {
       <input
         type={input.type}
         placeholder={input.placeholder}
-        onChange={makeOnChange(input.name)}
+        onChange={makeOnChange(input.name, input.type)}
         id={input.label}
         name="data"
-        value={data[input.name]}
+        value={data[input.name] || ''}
       />
     </div>
   ))
