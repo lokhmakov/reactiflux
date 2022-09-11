@@ -26,7 +26,7 @@ const inputs = [
 
 const mapEventHandler = {
   text: (e) => e.target.value,
-  number: (e) => e.target.valueAsNumber,
+  number: (e) => e.target.valueAsNumber || 0,
 }
 
 export default function Page() {
@@ -51,7 +51,7 @@ export default function Page() {
         onChange={makeOnChange(input.name, input.type)}
         id={input.label}
         name="data"
-        value={`${data[input.name]}` || ''}
+        value={data[input.name] || ''}
       />
     </div>
   ))
