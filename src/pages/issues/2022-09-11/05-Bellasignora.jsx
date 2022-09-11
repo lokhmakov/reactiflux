@@ -33,6 +33,7 @@ export default function Page() {
   const [data, setData] = React.useState({
     code: '',
     article: '',
+    price: 0,
   })
 
   console.log(`Page`, data)
@@ -50,7 +51,7 @@ export default function Page() {
         onChange={makeOnChange(input.name, input.type)}
         id={input.label}
         name="data"
-        value={data[input.name] || ''}
+        value={`${data[input.name]}` || ''}
       />
     </div>
   ))
