@@ -26,7 +26,14 @@ const m1 = createMachine({
     idle: {
       on: {
         SET: {
-          actions: [assign({value: (_, event) => event.value})],
+          actions: [
+            assign({value: (_, event) => event.value}),
+            actions.cancel('debounce'),
+            actions.send({type: 'DO_DEBOUNCE'}, {delay: 1000, id: 'debounce'}),
+          ],
+        },
+        DO_DEBOUNCE: {
+          actions: assign({debouncedValue: (context) => context.value}),
         },
       },
     },
@@ -36,6 +43,7 @@ const m1 = createMachine({
 const s1 = interpret(m1)
 
 // s1.onTransition((state) => console.log(state.value))
+s1.onChange(console.log)
 
 s1.start()
 
