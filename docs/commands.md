@@ -1,5 +1,12 @@
-## Discord
+# package.json - Interactive update 
 
 ```
-Not all sirs !gender
+// npx npm
+npx npm-check-updates -i
+
+// yarn
+yarn upgrade-interactive --latest
+
+// pnpm
+pnpm upgrade -i
 ```
