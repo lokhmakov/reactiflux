@@ -2,7 +2,7 @@ import {useMachine} from '@xstate/react'
 import {createMachine} from 'xstate'
 
 const machine = 
-/** @xstate-layout N4IgpgJg5mDOIC5QAoC2BDAxgCwJYDswBKAOgBcB7KKAG0gHl8BiAFXoHF2AZAUUVAAOFWLjK4K+fiAAeiALQBGABwAGEgHZ1AVgCcAFi1KdShQDYFAJj0AaEAE95SvWvUqtpj1r1L1OzQF9-WzQsPEJSSmo6CHoAM1jWDm4+JBAhETEJKVkERVUNbX1DYzNLG3tHZw03D1MvHz91QKCQfAoIOCkQnAJicipaBklU9NFxYdAcvJdCgyMTcytbB1z1fPUAZiUlDwsLFVMDvUDgjB7w-qiGeKlRzImZeWUZ3TmSxfKVuVclDUONrRaTRaDY6DbHFrdMLEW7CMZZVJTfZ6AqvYoLMrLeQ6SwkUxOBSAvQKQl1BTNfxAA */
+/** @xstate-layout N4IgpgJg5mDOIC5QAoC2BDAxgCwJYDswBKAOgBcB7KKAG0gHl8BiAFXoHF2AZAUUVAAOFWLjK4K+fiAAeiAIwB2AKwkALAAYAnHM0KATOoUKAzAeMAaEAE9EAWiUKS6gwA49Lpepea9cpZoA2AF8gyzQsPEJSSmo6CHoAMwTWDm4+JBAhETEJKVkEORdjEk9VH09vJRc5AIDLGwQ9TRcSfVrVasCFF30Q0JB8Cgg4KXCcAmJyKloGSQys0XE50HzjLRI5dU9nJX9VI1V6+SVigP0FVTWFM793ELCMcaip2IYkqQWc5ZlEDRIfOTGALGTaqJR6VSKJRHApKOQbc6XQw3cEue4gMaRYgfYSLXIZfI1f6+IEg9RgiFQmG2OTuf6aTTGSF6IxAgx6PpBIA */
 createMachine({
 	context: {toggleCount: 0},
 	tsTypes: {} as import('./07.typegen').Typegen0,
@@ -14,6 +14,7 @@ createMachine({
 			on: {
 				TOGGLE: {
 					target: 'toggledOff',
+					actions: `inc`,
 				},
 			},
 		},
@@ -21,6 +22,7 @@ createMachine({
 			on: {
 				TOGGLE: {
 					target: 'toggledOn',
+					actions: ['dec', `plus`, 'sum']
 				},
 			},
 		},
@@ -28,7 +30,7 @@ createMachine({
 })
 
 export default function Page() {
-	const [state, send] = useMachine(machine)
+	const [state, send] = useMachine(machine, {})
 
 	// send({type: 'TOGGLE'})
 
