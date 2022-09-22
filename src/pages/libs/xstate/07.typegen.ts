@@ -7,12 +7,15 @@ export interface Typegen0 {
 	}
 	invokeSrcNameMap: {}
 	missingImplementations: {
-		actions: never
+		actions: 'dec' | 'sum'
 		services: never
 		guards: never
 		delays: never
 	}
-	eventsCausingActions: {}
+	eventsCausingActions: {
+		dec: 'TOGGLE'
+		sum: 'TOGGLE'
+	}
 	eventsCausingServices: {}
 	eventsCausingGuards: {}
 	eventsCausingDelays: {}
