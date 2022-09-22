@@ -9,6 +9,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/core": "^7.19.1",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/material": "^5.10.6",
+    "@mui/styles": "^5.10.6",
     "@react-three/drei": "^9.29.1",
     "@react-three/fiber": "^8.7.3",
     "@tanstack/react-location": "^3.7.4",
@@ -20,6 +25,7 @@
     "lodash": "^4.17.21",
     "peerjs": "^1.4.7",
     "prettier": "^2.7.1",
+    "query-string": "^7.1.1",
     "react": "^18.2.0",
     "react-contenteditable": "^3.3.6",
     "react-dom": "^18.2.0",
