@@ -1,7 +1,7 @@
 import * as React from 'react'
 
 export default function App() {
-  const [value, setValue] = React.useState()
+  const [value, setValue] = React.useState() // Your shared state
 
   return (
     <>
