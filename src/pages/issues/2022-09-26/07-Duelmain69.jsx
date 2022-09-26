@@ -25,5 +25,5 @@ function Section() {
 async function query({queryKey}) {
   const [_key, {a, b}] = queryKey
 
-  return [1, a, b]
+  return [1, a, b] // => [1, 2, 3]
 }
