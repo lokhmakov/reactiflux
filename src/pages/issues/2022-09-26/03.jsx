@@ -1,4 +1,4 @@
-const objA = {a: 1, b: 2, d: 3}
+const objA = {a: 1, b: 2}
 const objB = {a: 1, b: 2, c: 3}
 
 const filter = (a, b) =>
@@ -7,4 +7,6 @@ const filter = (a, b) =>
     {},
   )
 
-console.log(filter(objA, objB)) // => {d: 3, c: 3}
+const objDiff = filter(objA, objB)
+
+console.log(objDiff) // => {c: 3}
