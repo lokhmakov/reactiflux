@@ -4,8 +4,6 @@ import CircularProgress from '@mui/material/CircularProgress'
 export default function App() {
   const fromQuery = useQuery()
 
-  console.log(fromQuery)
-
   return (
     <>
       {fromQuery.pending ? <CircularProgress /> : null}
