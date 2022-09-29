@@ -12,6 +12,7 @@
     "@babel/core": "^7.19.1",
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
+    "@faker-js/faker": "^7.5.0",
     "@mui/material": "^5.10.6",
     "@react-three/drei": "^9.29.1",
     "@react-three/fiber": "^8.7.3",

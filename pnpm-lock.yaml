@@ -4,6 +4,7 @@ specifiers:
   '@babel/core': ^7.19.1
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
+  '@faker-js/faker': ^7.5.0
   '@mui/material': ^5.10.6
   '@react-three/drei': ^9.29.1
   '@react-three/fiber': ^8.7.3
@@ -42,6 +43,7 @@ dependencies:
   '@babel/core': 7.19.1
   '@emotion/react': 11.10.4_axxkdcpdr7up57umjkldobkynm
   '@emotion/styled': 11.10.4_sn4wuyy54zwps25tv4w7lbiz6i
+  '@faker-js/faker': 7.5.0
   '@mui/material': 5.10.6_af5ln35zuaotaffazii6n6bke4
   '@react-three/drei': 9.29.1_67uyhnksjibsr7wxhrnlyuwcrm
   '@react-three/fiber': 8.7.3_ww22p6cticflcq7fk2rysgxj34
@@ -530,6 +532,11 @@ packages:
     os: [linux]
     requiresBuild: true
     optional: true
+
+  /@faker-js/faker/7.5.0:
+    resolution: {integrity: sha512-8wNUCCUHvfvI0gQpDUho/3gPzABffnCn5um65F8dzQ86zz6dlt4+nmAA7PQUc8L+eH+9RgR/qzy5N/8kN0Ozdw==}
+    engines: {node: '>=14.0.0', npm: '>=6.0.0'}
+    dev: false
 
   /@firebase/analytics-compat/0.1.13_okqetvhhmwzj4y7sjb6bgkl5mq:
     resolution: {integrity: sha512-QC1DH/Dwc8fBihn0H+jocBWyE17GF1fOCpCrpAiQ2u16F/NqsVDVG4LjIqdhq963DXaXneNY7oDwa25Up682AA==}
