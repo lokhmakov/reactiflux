@@ -1,15 +1,15 @@
 import * as React from 'react'
 import cn from 'classnames'
 
+const makeId = () => Math.random().toString(32).slice(2)
 const makeOne = (id) => ({id, genre: `genre ${id}`})
-const make10 = (start = 0) =>
-  Array.from({length: 10}, (_, id) => makeOne(id + start))
+const make10 = () => Array.from({length: 10}, (_) => makeOne(makeId()))
 
 export default function Page() {
   const [cards, setCards] = React.useState(make10)
 
   function onAdd10() {
-    setCards((prev) => prev.concat(make10(prev.length)))
+    setCards((prev) => prev.concat(make10()))
   }
 
   const onClick = React.useCallback(
