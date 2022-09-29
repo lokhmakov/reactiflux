@@ -3,7 +3,7 @@ import cn from 'classnames'
 
 const makeId = () => Math.random().toString(32).slice(2)
 const makeOne = (id) => ({id, genre: `genre ${id}`})
-const make10 = () => Array.from({length: 10}, (_) => makeOne(makeId()))
+const make10 = () => Array.from({length: 10}, () => makeOne(makeId()))
 
 export default function Page() {
   const [cards, setCards] = React.useState(make10)
