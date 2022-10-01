@@ -1,5 +1,5 @@
 import * as React from 'react'
-import cn from 'classnames'
+import {twMerge as tw} from 'tailwind-merge'
 
 export default function App() {
   const {index, list, showPrev, showNext, on} = useQuery()
@@ -23,9 +23,11 @@ const List = ({list, index}) =>
 
 const Actions = ({index, showPrev, showNext, onClickPrev, onClickNext}) => (
   <div className="flex items-center gap-2 select-none">
-    {showPrev ? <ArrowLeft onClick={onClickPrev} /> : null}
-    <div>{index}</div>
-    {showNext ? <ArrowRight onClick={onClickNext} /> : null}
+    <ArrowLeft onClick={onClickPrev} show={showPrev} />
+    <div className="flex w-8 bg-slate-500 justify-center text-white">
+      {index}
+    </div>
+    <ArrowRight onClick={onClickNext} show={showNext} />
   </div>
 )
 
@@ -65,26 +67,28 @@ async function query() {
   return Array.from({length: 10}, makeOne)
 }
 
+const ITEM_CLASS = `rounded-xl p-2`
+
 function Item({active, name}) {
   return (
-    <div
-      className={cn('rounded-xl p-2', active ? `bg-red-200` : `bg-green-200`)}
-    >
+    <div className={tw(active ? `bg-red-200` : `bg-green-200`, ITEM_CLASS)}>
       {name}
     </div>
   )
 }
 
+const C_ARROW = `h-0 w-0 border-x-8 border-x-transparent border-b-[16px] border-b-blue-600`
+
 const ArrowLeft = (props) => (
   <div
-    className={`h-0 w-0 border-x-8 border-x-transparent border-b-[16px] border-b-blue-600 -rotate-90`}
+    className={tw(`-rotate-90`, !props.show && `invisible`, C_ARROW)}
     {...props}
   />
 )
 
 const ArrowRight = (props) => (
   <div
-    className={`h-0 w-0 border-x-8 border-x-transparent border-b-[16px] border-b-blue-600 rotate-90`}
+    className={tw(`rotate-90`, !props.show && `invisible`, C_ARROW)}
     {...props}
   />
 )

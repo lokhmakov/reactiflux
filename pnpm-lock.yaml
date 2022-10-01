@@ -30,6 +30,7 @@ specifiers:
   react-is: ^18.2.0
   react-quill: ^2.0.0
   styled-components: ^5.3.5
+  tailwind-merge: ^1.6.1
   tailwindcss: ^3.1.8
   three: ^0.144.0
   trystero: ^0.11.3
@@ -64,6 +65,7 @@ dependencies:
   react-is: 18.2.0
   react-quill: 2.0.0_biqbaboplfbrettd7655fr4n2y
   styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
+  tailwind-merge: 1.6.1
   three: 0.144.0
   trystero: 0.11.3
   xstate: 4.33.6
@@ -6274,6 +6276,10 @@ packages:
       react: '>=17.0'
     dependencies:
       react: 18.2.0
+    dev: false
+
+  /tailwind-merge/1.6.1:
+    resolution: {integrity: sha512-wC/tta/BxpmE/4Qc7WX0OK+ajhetgpJZ+IfQMpUBOv4nWjlxQKbq/FBkcZDX7fVGq2RJBnWa3WzsPz5mUe+g7g==}
     dev: false
 
   /tailwindcss/3.1.8_postcss@8.4.16:
