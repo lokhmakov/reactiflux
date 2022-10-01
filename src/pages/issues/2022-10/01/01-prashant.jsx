@@ -22,7 +22,7 @@ const List = ({list, index}) =>
   list.map((item, i) => <Item key={item.id} {...item} active={i === index} />)
 
 const Actions = ({index, showPrev, showNext, onClickPrev, onClickNext}) => (
-  <div className="flex items-center gap-2">
+  <div className="flex items-center gap-2 select-none">
     {showPrev ? <ArrowLeft onClick={onClickPrev} /> : null}
     <div>{index}</div>
     {showNext ? <ArrowRight onClick={onClickNext} /> : null}
@@ -31,14 +31,12 @@ const Actions = ({index, showPrev, showNext, onClickPrev, onClickNext}) => (
 
 function useQuery() {
   const [list, setList] = React.useState([])
-  const [index, setIndex] = React.useState(null)
+  const [index, setIndex] = React.useState(0)
 
   React.useEffect(() => {
     query().then((responseList) => {
-      if (responseList.length) {
-        setIndex(0)
-        setList(responseList)
-      }
+      setIndex(0)
+      setList(responseList)
     })
   }, [])
 
