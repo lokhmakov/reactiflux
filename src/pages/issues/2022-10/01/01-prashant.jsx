@@ -79,16 +79,10 @@ function Item({active, name}) {
 
 const C_ARROW = `h-0 w-0 border-x-8 border-x-transparent border-b-[16px] border-b-blue-600`
 
-const ArrowLeft = (props) => (
-  <div
-    className={tw(`-rotate-90`, !props.show && `invisible`, C_ARROW)}
-    {...props}
-  />
+const ArrowLeft = ({show, ...props}) => (
+  <div className={tw(`-rotate-90`, !show && `invisible`, C_ARROW)} {...props} />
 )
 
-const ArrowRight = (props) => (
-  <div
-    className={tw(`rotate-90`, !props.show && `invisible`, C_ARROW)}
-    {...props}
-  />
+const ArrowRight = ({show, ...props}) => (
+  <div className={tw(`rotate-90`, !show && `invisible`, C_ARROW)} {...props} />
 )
