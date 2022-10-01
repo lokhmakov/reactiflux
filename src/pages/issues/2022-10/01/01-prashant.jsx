@@ -46,7 +46,7 @@ function useQuery() {
   const showNext = index < list.length - 1
 
   const prev = () => setIndex((v) => (v > 0 ? v - 1 : v))
-  const next = () => setIndex((v) => (v < list.length ? v + 1 : v))
+  const next = () => setIndex((v) => (v < list.length - 1 ? v + 1 : v))
 
   return {
     on: {
