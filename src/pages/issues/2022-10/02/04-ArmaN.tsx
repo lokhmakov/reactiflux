@@ -1,11 +1,19 @@
 import * as React from 'react'
 
-const Context = React.createContext()
+type Context = {
+  header: string
+  updateHeader: (header: string) => void
+}
+
+const Context = React.createContext<Context>({
+  header: ``,
+  updateHeader: (v) => {},
+})
 
 export default function App() {
   const [header, setHeader] = React.useState(`header`)
 
-  const updateHeader = (s) => setHeader(s)
+  const updateHeader = (v: string) => setHeader(v)
 
   return (
     <Context.Provider value={{header, updateHeader}}>
@@ -17,7 +25,7 @@ export default function App() {
   )
 }
 
-function Layout(props) {
+function Layout(props: {children: React.ReactNode}) {
   const {header} = React.useContext(Context)
 
   return (
