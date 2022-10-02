@@ -5,6 +5,10 @@ specifiers:
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
   '@faker-js/faker': ^7.5.0
+  '@fortawesome/fontawesome-svg-core': ^6.2.0
+  '@fortawesome/free-solid-svg-icons': ^6.2.0
+  '@fortawesome/react-fontawesome': ^0.2.0
+  '@legendapp/state': ^0.18.6
   '@mui/material': ^5.10.6
   '@react-three/drei': ^9.29.1
   '@react-three/fiber': ^8.7.3
@@ -45,6 +49,10 @@ dependencies:
   '@emotion/react': 11.10.4_axxkdcpdr7up57umjkldobkynm
   '@emotion/styled': 11.10.4_sn4wuyy54zwps25tv4w7lbiz6i
   '@faker-js/faker': 7.5.0
+  '@fortawesome/fontawesome-svg-core': 6.2.0
+  '@fortawesome/free-solid-svg-icons': 6.2.0
+  '@fortawesome/react-fontawesome': 0.2.0_6j2wdqxompc6mcokhxkpep2gqu
+  '@legendapp/state': 0.18.6_react@18.2.0
   '@mui/material': 5.10.6_af5ln35zuaotaffazii6n6bke4
   '@react-three/drei': 9.29.1_67uyhnksjibsr7wxhrnlyuwcrm
   '@react-three/fiber': 8.7.3_ww22p6cticflcq7fk2rysgxj34
@@ -1007,6 +1015,39 @@ packages:
     resolution: {integrity: sha512-4ACd/c6ushrLuhn0+yjB9hznhnsc2IML6pf0Ulb1Q7w8SvR1jNGPu/Y7i4kvOm6R+WJkMHwyy5z3i3gN+Tawug==}
     dev: false
 
+  /@fortawesome/fontawesome-common-types/6.2.0:
+    resolution: {integrity: sha512-rBevIsj2nclStJ7AxTdfsa3ovHb1H+qApwrxcTVo+NNdeJiB9V75hsKfrkG5AwNcRUNxrPPiScGYCNmLMoh8pg==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dev: false
+
+  /@fortawesome/fontawesome-svg-core/6.2.0:
+    resolution: {integrity: sha512-Cf2mAAeMWFMzpLC7Y9H1I4o3wEU+XovVJhTiNG8ZNgSQj53yl7OCJaS80K4YjrABWZzbAHVaoHE1dVJ27AAYXw==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.2.0
+    dev: false
+
+  /@fortawesome/free-solid-svg-icons/6.2.0:
+    resolution: {integrity: sha512-UjCILHIQ4I8cN46EiQn0CZL/h8AwCGgR//1c4R96Q5viSRwuKVo0NdQEc4bm+69ZwC0dUvjbDqAHF1RR5FA3XA==}
+    engines: {node: '>=6'}
+    requiresBuild: true
+    dependencies:
+      '@fortawesome/fontawesome-common-types': 6.2.0
+    dev: false
+
+  /@fortawesome/react-fontawesome/0.2.0_6j2wdqxompc6mcokhxkpep2gqu:
+    resolution: {integrity: sha512-uHg75Rb/XORTtVt7OS9WoK8uM276Ufi7gCzshVWkUJbHhh3svsUUeqXerrM96Wm7fRiDzfKRwSoahhMIkGAYHw==}
+    peerDependencies:
+      '@fortawesome/fontawesome-svg-core': ~1 || ~6
+      react: '>=16.3'
+    dependencies:
+      '@fortawesome/fontawesome-svg-core': 6.2.0
+      prop-types: 15.8.1
+      react: 18.2.0
+    dev: false
+
   /@grpc/grpc-js/1.7.1:
     resolution: {integrity: sha512-GVtMU4oh/TeKkWGzXUEsyZtyvSUIT1z49RtGH1UnEGeL+sLuxKl8QH3KZTlSB329R1sWJmesm5hQ5CxXdYH9dg==}
     engines: {node: ^8.13.0 || >=10.10.0}
@@ -1334,6 +1375,23 @@ packages:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.0
       '@jridgewell/sourcemap-codec': 1.4.14
+
+  /@legendapp/state/0.18.6_react@18.2.0:
+    resolution: {integrity: sha512-UzZqhdMh8ckPcT/GIH9ka2loVNvLFcWxnO3ETalWUx5Df2GFREDG27XTtQUyUPgu/Icut62D8k6SKOHZnILL0g==}
+    peerDependencies:
+      react: '>=16.8'
+      react-native: '>=0.61'
+      react-native-mmkv: ^2
+    peerDependenciesMeta:
+      react:
+        optional: true
+      react-native:
+        optional: true
+      react-native-mmkv:
+        optional: true
+    dependencies:
+      react: 18.2.0
+    dev: false
 
   /@leichtgewicht/ip-codec/2.0.4:
     resolution: {integrity: sha512-Hcv+nVC0kZnQ3tD9GVu5xSMR4VVYOteQIr/hwFPVEvPdlXqgGEuRjiheChHgdM+JyqdgNcmzZOX/tnl0JOiI7A==}
