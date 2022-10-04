@@ -29,4 +29,14 @@ function case3() {
   console.log(range(A, B))
 }
 
-;[case1, case2, case3].forEach((fn) => fn())
+function case4() {
+  function* gRange(a, b, step = 1) {
+    for (; a <= b; a += step) yield a
+  }
+
+  const range = (a, b, step) => [...gRange(a, b, step)]
+
+  console.log(range(A, B, 3))
+}
+
+;[case1, case2, case3, case4].forEach((fn) => fn())
