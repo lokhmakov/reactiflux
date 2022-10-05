@@ -25,3 +25,5 @@ dist-ssr
 
 .history
 .dccache
+
+k8s
