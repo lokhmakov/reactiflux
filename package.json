@@ -17,6 +17,9 @@
     "@fortawesome/free-solid-svg-icons": "^6.2.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@legendapp/state": "^0.18.6",
+    "@master/css": "^1.37.2",
+    "@master/literal": "^1.0.11",
+    "@master/style-element.react": "^1.1.6",
     "@mui/material": "^5.10.6",
     "@react-three/drei": "^9.29.1",
     "@react-three/fiber": "^8.7.3",
@@ -39,7 +42,6 @@
     "styled-components": "^5.3.5",
     "tailwind-merge": "^1.6.1",
     "three": "^0.144.0",
-    "trystero": "^0.11.3",
     "xstate": "^4.33.6",
     "yup": "^0.32.11",
     "zod": "^3.19.1"
