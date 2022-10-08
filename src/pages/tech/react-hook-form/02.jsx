@@ -18,9 +18,21 @@ const schema = z.object({
 })
 
 export default function App() {
+  const resolver = zodResolver(schema)
+
   const {control, resetField, formState, trigger} = useForm({
-    // mode: `onChange`,
-    resolver: zodResolver(schema),
+    mode: `onChange`,
+    criteriaMode: `all`,
+    reValidateMode: 'onChange',
+    resolver: async (values, ...args) => {
+      if (values.minimumBid.value2 === `foo`) {
+        return {
+          errors: {},
+          values,
+        }
+      }
+      return resolver(values, ...args)
+    },
   })
 
   return (
@@ -45,12 +57,11 @@ function Input({name, control, defaultValue, triggerList, trigger}) {
     defaultValue,
   })
 
-  function onChange(...params) {
+  React.useEffect(() => {
     if (trigger && triggerList) {
       trigger(triggerList)
     }
-    field.onChange(...params)
-  }
+  }, [field.value])
 
-  return <input {...field} onChange={onChange} />
+  return <input {...field} />
 }
