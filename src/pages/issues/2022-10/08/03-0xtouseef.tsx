@@ -84,3 +84,15 @@ const InputWithRef = React.forwardRef<HTMLInputElement, {active?: boolean}>(
     return <input ref={ref} {...props} />
   },
 )
+
+const Input1 = React.forwardRef<HTMLInputElement, InputProps>((props, ref) => {
+  const {placeholder, type} = props
+  return (
+    <input
+      ref={ref}
+      type={type}
+      placeholder={placeholder}
+      className={` ${type === 'submit' ? 'submit_btn' : 'custom_input'} `}
+    />
+  )
+})
