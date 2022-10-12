@@ -16,6 +16,7 @@ specifiers:
   '@mui/material': ^5.10.6
   '@react-three/drei': ^9.29.1
   '@react-three/fiber': ^8.7.3
+  '@shopify/react-web-worker': ^5.0.6
   '@tanstack/react-location': ^3.7.4
   '@tanstack/react-query': ^4.3.4
   '@types/react': ^18.0.20
@@ -64,6 +65,7 @@ dependencies:
   '@mui/material': 5.10.6_af5ln35zuaotaffazii6n6bke4
   '@react-three/drei': 9.29.1_67uyhnksjibsr7wxhrnlyuwcrm
   '@react-three/fiber': 8.7.3_ww22p6cticflcq7fk2rysgxj34
+  '@shopify/react-web-worker': 5.0.6_ir3quccc6i62x6qn6jjhyjjiey
   '@tanstack/react-location': 3.7.4_biqbaboplfbrettd7655fr4n2y
   '@tanstack/react-query': 4.3.4_biqbaboplfbrettd7655fr4n2y
   '@xstate/react': 3.0.1_csov6svwxizbqjpbal6caks7le
@@ -961,6 +963,61 @@ packages:
       suspend-react: 0.0.8_react@18.2.0
       three: 0.144.0
       zustand: 3.7.2_react@18.2.0
+    dev: false
+
+  /@remote-ui/rpc/1.3.4:
+    resolution: {integrity: sha512-KwZ2egbGQqO+DjgwoZlQ4QedMZHeFuGY/2FiGUrqvyhp4bGheSLr5bm3jF23+2tQVywUHB2gDPqzUgR/47Lb2g==}
+    dev: false
+
+  /@shopify/react-hooks/3.0.2_react@18.2.0:
+    resolution: {integrity: sha512-zfo4vgB5k4jwOWmwJJxaYkDRJs/Yf+D7RlxVZDmZukiXqD/42m0wP3az3+wq74AjPf3PyG8GcOl2Z3d79Y4nEw==}
+    engines: {node: ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      react: '>=16.8.0 <19.0.0'
+    dependencies:
+      react: 18.2.0
+    dev: false
+
+  /@shopify/react-web-worker/5.0.6_ir3quccc6i62x6qn6jjhyjjiey:
+    resolution: {integrity: sha512-kp0AddXPcW3HGV5w5KmG2KIFXlV4Nm7/Zf8fZAvWU7IQlwqsucW7M8bC7bSLWGqV6uJmdpsxnPvx/g9S3uVF0w==}
+    engines: {node: ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      react: '>=16.8.0 <19.0.0'
+      react-dom: '>=16.8.0 <19.0.0'
+    dependencies:
+      '@shopify/react-hooks': 3.0.2_react@18.2.0
+      '@shopify/useful-types': 5.1.1
+      '@shopify/web-worker': 5.0.1_@babel+core@7.19.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+    transitivePeerDependencies:
+      - '@babel/core'
+      - webpack
+      - webpack-virtual-modules
+    dev: false
+
+  /@shopify/useful-types/5.1.1:
+    resolution: {integrity: sha512-Lnzo84EsrbdO54togslYiwT4EVGDuQW96rRKSEJhkkluyirEjx61aw0SEzZOkNy6VOi5z6CdTBo/vlsnXIhV1Q==}
+    engines: {node: ^14.17.0 || >=16.0.0}
+    dev: false
+
+  /@shopify/web-worker/5.0.1_@babel+core@7.19.1:
+    resolution: {integrity: sha512-fGNcUkzqA9h2dD/3/zBd2YEPCXePN9Mmy53alb6DgpUq8nEgEE1yxj9+PfDi7RsUM+T36d8/QXgReOZ4NvlxuA==}
+    engines: {node: ^14.17.0 || >=16.0.0}
+    peerDependencies:
+      '@babel/core': ^7.0.0
+      webpack: ^5.38.0
+      webpack-virtual-modules: ^0.4.3
+    peerDependenciesMeta:
+      '@babel/core':
+        optional: true
+      webpack:
+        optional: true
+      webpack-virtual-modules:
+        optional: true
+    dependencies:
+      '@babel/core': 7.19.1
+      '@remote-ui/rpc': 1.3.4
     dev: false
 
   /@swc/helpers/0.3.17:
