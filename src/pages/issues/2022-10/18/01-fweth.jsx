@@ -19,20 +19,41 @@ export default function App() {
   }
 
   return (
-    <div className="flex flex:col gap:0.5rem">
-      <button onClick={() => insert(0, {name: `25`})}>insert</button>
-      <button onClick={() => updateName(0, 0, `44`)}>update</button>
-      <List list={v[0]} />
-      <List list={v[1]} />
-      <MiltiList listList={v} />
+    <div className="flex flex:col gap:2">
+      <button
+        className="p:2 bg:blue-50"
+        onClick={() => insert(0, {name: `25`})}
+      >
+        insert
+      </button>
+      <button className="p:2 bg:blue-50" onClick={() => updateName(0, 0, `44`)}>
+        update
+      </button>
+      <div className="grid-auto-rows grid-cols:3 p:4 gap:2">
+        <List list={v[0]} />
+        <List list={v[1]} />
+        <MiltiList listList={v} />
+      </div>
     </div>
   )
 }
 
 function List(props) {
-  return props.list.map((v, i) => <div key={i}>{v.name}</div>)
+  return (
+    <div>
+      {props.list.map((v, i) => (
+        <div key={i}>{v.name}</div>
+      ))}
+    </div>
+  )
 }
 
 function MiltiList(props) {
-  return props.listList.map((v, i) => <div key={i}>{v[0].name}</div>)
+  return (
+    <div>
+      {props.listList.map((v, i) => (
+        <div key={i}>{v[0].name}</div>
+      ))}
+    </div>
+  )
 }
