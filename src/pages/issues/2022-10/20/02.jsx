@@ -6,7 +6,9 @@ export default function App() {
     {id: `id2`, username: `username 2`},
   ])
 
-  return users.map((user) => <UserField key={user.id} user={user} />)
+  return users.map((user) => (
+    <UserField key={user.id} user={user} onChange={console.log} />
+  ))
 }
 
 const UserField = ({user, onChange}) => {
