@@ -19,28 +19,25 @@ export default function App() {
     queryPermissions().then(setCheck)
   }, [])
 
-  const onChange = ({target: {value}}) => {
+  const onChange = ({target: {value}}) =>
     setCheck((prev) =>
       prev.includes(value) ? prev.filter((v) => v !== value) : [...prev, value],
     )
-  }
 
   return (
-    <div className="App">
-      <div className="list-container form-check mt-3">
-        {checkList.map((item, index) => (
-          <div key={index}>
-            <input
-              type="checkbox"
-              className="form-check-input"
-              value={item}
-              checked={check.includes(item)}
-              onChange={onChange}
-            />
-            <span className="form-check-label">{item}</span>
-          </div>
-        ))}
-      </div>
+    <div className="list-container form-check mt-3">
+      {checkList.map((item, index) => (
+        <div key={index}>
+          <input
+            type="checkbox"
+            className="form-check-input"
+            value={item}
+            checked={check.includes(item)}
+            onChange={onChange}
+          />
+          <span className="form-check-label">{item}</span>
+        </div>
+      ))}
     </div>
   )
 }
