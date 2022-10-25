@@ -27,8 +27,11 @@ specifiers:
   axios: ^0.27.2
   class-variance-authority: ^0.2.3
   classnames: ^2.3.2
+  comlink: ^4.3.1
   generouted: ^1.5.1
+  greenlet: ^1.1.0
   lodash: ^4.17.21
+  paralleljs: ^1.1.0
   peerjs: ^1.4.7
   postcss: ^8.4.16
   prettier: ^2.7.1
@@ -73,8 +76,11 @@ dependencies:
   axios: 0.27.2
   class-variance-authority: 0.2.3_typescript@4.8.3
   classnames: 2.3.2
+  comlink: 4.3.1
   generouted: 1.5.1_x72gaee753lj3qbd6mqj3qucyq
+  greenlet: 1.1.0
   lodash: 4.17.21
+  paralleljs: 1.1.0
   peerjs: 1.4.7
   prettier: 2.7.1
   query-string: 7.1.1
@@ -1395,6 +1401,10 @@ packages:
       delayed-stream: 1.0.0
     dev: false
 
+  /comlink/4.3.1:
+    resolution: {integrity: sha512-+YbhUdNrpBZggBAHWcgQMLPLH1KDF3wJpeqrCKieWQ8RL7atmgsgTQko1XEBK6PsecfopWNntopJ+ByYG1lRaA==}
+    dev: false
+
   /convert-source-map/1.8.0:
     resolution: {integrity: sha512-+OQdjP49zViI/6i7nIJpA8rAl4sV/JdPfU9nZs3VqOwGIgizICvuN2ru6fMd+4llL0tar18UYJXfZ/TWtmhUjA==}
     dependencies:
@@ -1881,6 +1891,10 @@ packages:
     resolution: {integrity: sha512-b/ZCF6amfAUb7dJM/MxRs7AetQEahYzJ8PtgfrmEdtw6uyGOr+ZSGtgjFm6mfsBkxJ4d2W7kg+Nlqzqvn3Bc0w==}
     dev: false
 
+  /greenlet/1.1.0:
+    resolution: {integrity: sha512-W/kKzq7ZSF/LFItIjaSaccw8L6js+9SMSS5buXZs/Td7qZAT91Kd0LTxuUjSWDwuyv4MPo/fhZdkRLV1zsuClg==}
+    dev: false
+
   /has-flag/3.0.0:
     resolution: {integrity: sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==}
     engines: {node: '>=4'}
@@ -2145,6 +2159,11 @@ packages:
     dependencies:
       string.prototype.codepointat: 0.2.1
       tiny-inflate: 1.0.3
+    dev: false
+
+  /paralleljs/1.1.0:
+    resolution: {integrity: sha512-5sYLAEzM+qMDYzQeVWyNdqINU4h+/Fhr0CrZs3+HCYPIhOWuA2BCzn74js2qzX+LKFwRQR6sSJBZhgT+WWhbfw==}
+    engines: {node: '>=10'}
     dev: false
 
   /parchment/1.1.4:
