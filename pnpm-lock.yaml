@@ -8,6 +8,7 @@ specifiers:
   '@fortawesome/fontawesome-svg-core': ^6.2.0
   '@fortawesome/free-solid-svg-icons': ^6.2.0
   '@fortawesome/react-fontawesome': ^0.2.0
+  '@glideapps/glide-data-grid': ^5.1.4
   '@hookform/resolvers': ^2.9.8
   '@legendapp/state': ^0.18.6
   '@master/css': ^1.37.2
@@ -31,6 +32,7 @@ specifiers:
   generouted: ^1.5.1
   greenlet: ^1.1.0
   lodash: ^4.17.21
+  marked: ^4.1.1
   paralleljs: ^1.1.0
   peerjs: ^1.4.7
   postcss: ^8.4.16
@@ -42,6 +44,9 @@ specifiers:
   react-hook-form: ^7.37.0
   react-is: ^18.2.0
   react-quill: ^2.0.0
+  react-responsive-carousel: ^3.2.23
+  sql.js: ^1.8.0
+  sql.js-httpvfs: ^0.8.12
   styled-components: ^5.3.5
   tailwind-merge: ^1.6.1
   tailwindcss: ^3.1.8
@@ -61,6 +66,7 @@ dependencies:
   '@fortawesome/fontawesome-svg-core': 6.2.0
   '@fortawesome/free-solid-svg-icons': 6.2.0
   '@fortawesome/react-fontawesome': 0.2.0_6j2wdqxompc6mcokhxkpep2gqu
+  '@glideapps/glide-data-grid': 5.1.4_m67jrwmihkeev4rzgyoem43jsu
   '@hookform/resolvers': 2.9.8_react-hook-form@7.37.0
   '@legendapp/state': 0.18.6_react@18.2.0
   '@master/css': 1.37.2
@@ -80,6 +86,7 @@ dependencies:
   generouted: 1.5.1_x72gaee753lj3qbd6mqj3qucyq
   greenlet: 1.1.0
   lodash: 4.17.21
+  marked: 4.1.1
   paralleljs: 1.1.0
   peerjs: 1.4.7
   prettier: 2.7.1
@@ -90,6 +97,9 @@ dependencies:
   react-hook-form: 7.37.0_react@18.2.0
   react-is: 18.2.0
   react-quill: 2.0.0_biqbaboplfbrettd7655fr4n2y
+  react-responsive-carousel: 3.2.23
+  sql.js: 1.8.0
+  sql.js-httpvfs: 0.8.12
   styled-components: 5.3.5_7i5myeigehqah43i5u7wbekgba
   tailwind-merge: 1.6.1
   three: 0.144.0
@@ -588,6 +598,24 @@ packages:
       '@fortawesome/fontawesome-svg-core': 6.2.0
       prop-types: 15.8.1
       react: 18.2.0
+    dev: false
+
+  /@glideapps/glide-data-grid/5.1.4_m67jrwmihkeev4rzgyoem43jsu:
+    resolution: {integrity: sha512-YQ2fpIg1DdYumJcbokGH6zYc4+cOIyoWcVwO3GMiu6Tg1D2BsvTVf76m6QGICobHefqWeP0PMaBOENuTIUp9pg==}
+    peerDependencies:
+      lodash: ^4.17.19
+      marked: ^4.0.10
+      react: ^16.12.0 || 17.x || 18.x
+      react-dom: ^16.12.0 || 17.x || 18.x
+      react-responsive-carousel: ^3.2.7
+    dependencies:
+      canvas-hypertxt: 0.0.7
+      lodash: 4.17.21
+      marked: 4.1.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-number-format: 5.1.0_biqbaboplfbrettd7655fr4n2y
+      react-responsive-carousel: 3.2.23
     dev: false
 
   /@hookform/resolvers/2.9.8_react-hook-form@7.37.0:
@@ -1322,6 +1350,10 @@ packages:
 
   /caniuse-lite/1.0.30001399:
     resolution: {integrity: sha512-4vQ90tMKS+FkvuVWS5/QY1+d805ODxZiKFzsU8o/RsVJz49ZSRR8EjykLJbqhzdPgadbX6wB538wOzle3JniRA==}
+
+  /canvas-hypertxt/0.0.7:
+    resolution: {integrity: sha512-XPXJvvaEQddHl0KaDdnnEowcCiYiL2gJz4M8ANK1GvZPcZimgvjRubnChtUospZWFSiNJtE06VkLnQs2vve5tQ==}
+    dev: false
 
   /chalk/2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -2063,6 +2095,12 @@ packages:
       sourcemap-codec: 1.4.8
     dev: true
 
+  /marked/4.1.1:
+    resolution: {integrity: sha512-0cNMnTcUJPxbA6uWmCmjWz4NJRe/0Xfk2NhXCUHjew9qJzFN20krFnsUe7QynwqOwa5m1fZ4UDg0ycKFVC0ccw==}
+    engines: {node: '>= 12'}
+    hasBin: true
+    dev: false
+
   /merge2/1.4.1:
     resolution: {integrity: sha512-8q7VEgMJW4J8tcfVPy8g09NcQwZdbwFEqhe/WZkoIzjn/3TGDwtOCYtXGxA3O8tPzpczCCDgv+P2P5y00ZJOOg==}
     engines: {node: '>= 8'}
@@ -2379,6 +2417,13 @@ packages:
       scheduler: 0.23.0
     dev: false
 
+  /react-easy-swipe/0.0.21:
+    resolution: {integrity: sha512-OeR2jAxdoqUMHIn/nS9fgreI5hSpgGoL5ezdal4+oO7YSSgJR8ga+PkYGJrSrJ9MKlPcQjMQXnketrD7WNmNsg==}
+    engines: {node: '>= 6'}
+    dependencies:
+      prop-types: 15.8.1
+    dev: false
+
   /react-hook-form/7.37.0_react@18.2.0:
     resolution: {integrity: sha512-6NFTxsnw+EXSpNNvLr5nFMjPdYKRryQcelTHg7zwBB6vAzfPIcZq4AExP4heVlwdzntepQgwiOQW4z7Mr99Lsg==}
     engines: {node: '>=12.22.0'}
@@ -2398,6 +2443,17 @@ packages:
 
   /react-merge-refs/1.1.0:
     resolution: {integrity: sha512-alTKsjEL0dKH/ru1Iyn7vliS2QRcBp9zZPGoWxUOvRGWPUYgjo+V01is7p04It6KhgrzhJGnIj9GgX8W4bZoCQ==}
+    dev: false
+
+  /react-number-format/5.1.0_biqbaboplfbrettd7655fr4n2y:
+    resolution: {integrity: sha512-zAJokH+4czPhvXbvWWQvWoa0/HNMvGGGT09xBgfoiXYnsJYWqxvHfAl0eDhIZ+BJQ5ssiHZK8OW54fj2Dc8HMQ==}
+    peerDependencies:
+      react: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^18.0.0
+      react-dom: ^0.14 || ^15.0.0 || ^16.0.0 || ^17.0.0 || ^18.0.0 || ^18.0.0
+    dependencies:
+      prop-types: 15.8.1
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
     dev: false
 
   /react-quill/2.0.0_biqbaboplfbrettd7655fr4n2y:
@@ -2428,6 +2484,14 @@ packages:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /react-responsive-carousel/3.2.23:
+    resolution: {integrity: sha512-pqJLsBaKHWJhw/ItODgbVoziR2z4lpcJg+YwmRlSk4rKH32VE633mAtZZ9kDXjy4wFO+pgUZmDKPsPe1fPmHCg==}
+    dependencies:
+      classnames: 2.3.2
+      prop-types: 15.8.1
+      react-easy-swipe: 0.0.21
+    dev: false
 
   /react-transition-group/4.4.5_biqbaboplfbrettd7655fr4n2y:
     resolution: {integrity: sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g==}
@@ -2577,6 +2641,16 @@ packages:
   /split-on-first/1.1.0:
     resolution: {integrity: sha512-43ZssAJaMusuKWL8sKUBQXHWOpq8d6CfN/u1p4gUzfJkM05C8rxTmYrkIPTXapZpORA6LkkzcUulJ8FqA7Uudw==}
     engines: {node: '>=6'}
+    dev: false
+
+  /sql.js-httpvfs/0.8.12:
+    resolution: {integrity: sha512-lcEBc2q0psFRfdCx8Di22oUIkkv5MUIaVO/fGCj/Jjx6YQDKVylQEcjd7NSSbmINHTRwVkm/vWP8uuevT7Rkkw==}
+    dependencies:
+      comlink: 4.3.1
+    dev: false
+
+  /sql.js/1.8.0:
+    resolution: {integrity: sha512-3HD8pSkZL+5YvYUI8nlvNILs61ALqq34xgmF+BHpqxe68yZIJ1H+sIVIODvni25+CcxHUxDyrTJUL0lE/m7afw==}
     dev: false
 
   /stats.js/0.17.0:

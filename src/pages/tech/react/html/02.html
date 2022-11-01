@@ -1,0 +1,28 @@
+<!DOCTYPE>
+<html>
+<head>
+  <script src="https://unpkg.com/react/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const Component = props => {
+      const [value, setValue] = React.useState(0)
+      return (<div onClick={inc(setValue)}>My component! {value}</div>);
+    };
+
+    const inc = (set) => () => set(v => v + 1)
+
+    const App = () => (
+      <div className="App">
+        <Component />
+      </div>
+    );
+
+    const root = document.querySelector('#root');
+    ReactDOM.render(<App />, root);
+  </script>
+</body>
+</html>

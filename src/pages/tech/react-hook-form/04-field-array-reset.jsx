@@ -10,9 +10,9 @@ export default function App() {
     {name: `value2`},
     {name: `value3`},
   ])
-  const {control, reset} = useForm({
+  const {control, resetField} = useForm({
     defaultValues: {
-      data: values,
+      data: React.useMemo(() => values, [values]),
     },
   })
   const {fields} = useFieldArray({
@@ -26,16 +26,23 @@ export default function App() {
   function load() {
     query().then((data) => {
       setValues(data)
-      reset({data})
+      resetField(`data`)
     })
   }
 
   return (
     <>
       <button onClick={load}>load new values</button>
-      {fields.map((v, index) => {
+      {fields.map((item, index) => {
         const name = `data[${index}].name`
-        return <Input key={name} name={name} control={control} />
+        return (
+          <Input
+            key={name}
+            name={name}
+            control={control}
+            defaultValue={item.defaultValue}
+          />
+        )
       })}
     </>
   )
