@@ -11,7 +11,7 @@ export default function App() {
   )
 }
 
-const Section = React.forwardRef((props, ref) => {
+const Section = React.forwardRef((_props, ref) => {
   const innerRef = React.useRef<HTMLInputElement>(null)
 
   React.useImperativeHandle(ref, () => innerRef.current)

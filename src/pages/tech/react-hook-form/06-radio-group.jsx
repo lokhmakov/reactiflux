@@ -29,8 +29,6 @@ function RadioGroup({name, control, options, defaultValue}) {
     defaultValue,
   })
 
-  console.log(field)
-
   return options.map((item) => (
     <label key={item.value}>
       {item.label}

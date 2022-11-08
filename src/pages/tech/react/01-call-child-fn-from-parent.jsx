@@ -11,7 +11,7 @@ export function Screen() {
   )
 }
 
-const Children = React.forwardRef((_, ref) => {
+const Children = React.forwardRef((_props, ref) => {
   const [value, setValue] = React.useState(0)
   React.useImperativeHandle(ref, () => ({
     inc: () => setValue((v) => v + 1),
