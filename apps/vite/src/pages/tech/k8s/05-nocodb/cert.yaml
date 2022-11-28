@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: nocodb-cert
+spec:
+  secretName: nocodb-cert
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: nocodb.s.4a.software
+  dnsNames:
+    - nocodb.s.4a.software

@@ -1,0 +1,25 @@
+{
+  "name": "fp-ts",
+  "version": "0.0.0",
+  "main": "./index.tsx",
+  "types": "./index.tsx",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint *.ts*",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "workspace:*",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.5.2",
+    "vitest": "^0.25.3"
+  },
+  "dependencies": {
+    "@effect/io": "^0.0.6",
+    "@fp-ts/data": "^0.0.16",
+    "fast-check": "^3.3.0"
+  }
+}

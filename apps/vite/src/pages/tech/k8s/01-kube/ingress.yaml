@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: knote
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: knote.s.4a.software
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: knote
+            port:
+              number: 3000
