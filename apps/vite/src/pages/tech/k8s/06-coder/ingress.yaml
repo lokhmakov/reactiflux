@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: coder-ingress
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - coder.s.4a.software
+      secretName: coder-cert
+  rules:
+    - host: coder.s.4a.software
+      http:
+        paths:
+          - path: /
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: coder
+                port:
+                  number: 80

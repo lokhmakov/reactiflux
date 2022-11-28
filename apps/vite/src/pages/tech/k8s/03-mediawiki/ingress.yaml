@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: mediawiki
+  namespace: mediawiki
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: m.s.4a.software
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: mediawiki
+            port:
+              number: 81
