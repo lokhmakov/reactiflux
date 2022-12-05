@@ -1,0 +1,12 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome against localhost",
+      "url": "http://localhost:3002/issues/2022-11/29/01",
+      "webRoot": "${workspaceFolder}/apps/vite"
+    }
+  ]
+}
